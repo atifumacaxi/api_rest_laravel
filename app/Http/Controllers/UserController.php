@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = Cache::remember('api-rest',60,function(){
+        $users = Cache::remember('api-rest',10,function(){
                 return User::all();
         });
         return response()->json($users,200);
@@ -66,8 +66,8 @@ class UserController extends Controller
     {
         $inputs = $request->only(['name','last_name','state','city','email']);
         $user->fill($inputs);
-
         $user->save();
+
         return response()->json([$user],200);
     }
 

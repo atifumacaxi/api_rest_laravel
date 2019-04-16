@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'lucas', 'last_name' => 'silvestre',
             'state' => 'SP', 'city' => 'Sao Paulo',
-            'email' => 'teste0012@terecoteco.com',
+            'email' => 'teste001@terecoteco.com',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             'password' => Hash::make('123456')

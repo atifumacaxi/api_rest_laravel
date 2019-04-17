@@ -25,5 +25,4 @@ ADD waitForMySQL.sh /root/
 RUN chmod +x /root/waitForMySQL.sh
 
 #Permissão para a pasta storage, instala as dependencias, cria a estrutura de banco e roda o listener do php
-CMD chmod -R 775 storage && chown -R www-data storage && php-fpm
-#&& cp .env.example .env && composer install && php artisan migrate:refresh --seed
+CMD chmod -R 775 storage && chown -R www-data storage && php-fpm && cp .env.example .env && composer install && php artisan migrate:refresh --seed
